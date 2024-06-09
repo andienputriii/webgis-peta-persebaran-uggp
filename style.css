@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+/* NAVBAR */
+nav {
+  display: flex;
+  background-color: rgb(252, 115, 115);
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+}
+
+nav .tengah{
+    background-color: aqua;
+}
+
+nav .kanan {
+    background-color: aqua;
+}
+
+/* Responsive */
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  nav .tengah {
+    width: 50%;
+  }
+
+  nav .kanan {
+    width: 50%;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    nav .tengah {
+      display: none;
+    }
+  
+    nav .kanan {
+      display: none;
+    }

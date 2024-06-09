@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Persebaran UGGp di Indonesia</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+    </style>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.css" type="text/css" />
+
+    <div id="map"></div>
+
+    <script>
+      mapboxgl.accessToken = "pk.eyJ1IjoibWF1bGF5eWFjeWJlciIsImEiOiJja3N5bTU2ZTkxZGMyMnZsZ2V2aTc5enlrIn0.AoQDAKuMyXgRBRptUQ-8Bw";
+      const map = new mapboxgl.Map({
+        container: "map",
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: "mapbox://styles/mapbox/streets-v12",
+        center: [118.078427, -2.071937],
+        zoom: 4,
+      });
+
+      map.on("load", () => {
+        map.addSource("places", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: [
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Batur</strong><p>Bantang, Kec. Kintamani, Kabupaten Bangli, Bali. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [115.3642046, -8.2838341],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Gunung Sewu</strong><p>Gebangharjo, Kabupaten Wonogiri, Jawa Tengah. Jam Buka : 08.30 - 15.30. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [110.7830816, -8.0401107],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Rinjani</strong><p>Semeru, Senaru, Kec. Bayan, Kabupaten Lombok Utara, Nusa Tenggara Bar. Jam Buka : 07.00 - 19.30. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [116.3955333, -8.4254307],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Ciletuh</strong><p>Geopark Ciletuh (Taman Bumi), Jl. Cimarinjung, Ciwaru, Kec. Ciemas, Kabupaten Sukabumi, Jawa Barat. Jam Buka : 24 Jam. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [106.4618738, -7.1815911],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Kaldera Toba</strong><p>Sigulatti, Sarimarrihit, Kec. Sianjur Mula Mula, Kabupaten Samosir, Sumatera Utara. Jam Buka : 09.00 - 17.00. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [98.6392646, 2.5518754],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description:
+                    '<strong>UGGp Belitong</strong><p>Jl. Seroja No.484, Parit, Kec. Tj. Pandan, Kabupaten Belitung, Kepulauan Bangka Belitung. Jam Buka : 09.00 - 16.00. </a>',
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [107.6267952, -2.7398615],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Ijen</strong><p>Jl. Kawah Ijen, Plalangan I, Kalianyar, Kec. Ijen, Kabupaten Bondowoso, Jawa Timur. Jam Buka : 24 Jam. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [114.2389331, -8.0577049],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Maros Pangkep</strong><p>Kelurahan Leang Leang, Leang-Leang, Kec. Bantimurung, Kabupaten Maros, Sulawesi Selatan. Jam Buka : 24 Jam. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [119.6734143, -4.97626],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Merangin</strong><p>Air Batu, Kec. Renah Pembarap, Kabupaten Merangin, Jambi. Jam Buka : 09.00 - 20.00. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [102.1105206, -2.1784883],
+                },
+              },
+              {
+                type: "Feature",
+                properties: {
+                  description: "<strong>UGGp Raja Ampat</strong><p>Jl. Yos Sudarso, Waisai, Distrik Kota Waisai, Kabupaten Raja Ampat, Papua Barat. </p>",
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [130.8077483, -0.4354084],
+                },
+              },
+            ],
+          },
+        });
+        // Add a layer showing the places.
+        map.addLayer({
+          id: "places",
+          type: "circle",
+          source: "places",
+          paint: {
+            "circle-color": "white",
+            "circle-radius": 4,
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff",
+          },
+        });
+
+        // Create a popup, but don't add it to the map yet.
+        const popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false,
+        });
+
+        map.on("mouseenter", "places", (e) => {
+          // Change the cursor style as a UI indicator.
+          map.getCanvas().style.cursor = "pointer";
+
+          // Copy coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const description = e.features[0].properties.description;
+
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+
+          // Populate the popup and set its coordinates
+          // based on the feature found.
+          popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        });
+
+        map.on("mouseleave", "places", () => {
+          map.getCanvas().style.cursor = "";
+          popup.remove();
+        });
+      });
+
+      // map.on('load', () => {
+      //     map.addSource('places', {
+      //         // This GeoJSON contains features that include an "icon"
+      //         // property. The value of the "icon" property corresponds
+      //         // to an image in the Mapbox Streets style's sprite.
+      //         'type': 'geojson',
+      //         'data': {
+      //             'type': 'FeatureCollection',
+      //             'features': [
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Make it Mount Pleasant</strong><p><a href="http://www.mtpleasantdc.com/makeitmtpleasant" target="_blank" title="Opens in a new window">Make it Mount Pleasant</a> is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>',
+      //                         'icon': 'theatre'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.038659, 38.931567]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Mad Men Season Five Finale Watch Party</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href="http://madmens5finale.eventbrite.com/" target="_blank" title="Opens in a new window">Mad Men Season Five Finale Watch Party</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. 8:00-11:00 p.m. $10 general admission, $20 admission and two hour open bar.</p>',
+      //                         'icon': 'theatre'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.003168, 38.894651]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Big Backyard Beach Bash and Wine Fest</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a <a href="http://tallulaeatbar.ticketleap.com/2012beachblanket/" target="_blank" title="Opens in a new window">Big Backyard Beach Bash and Wine Fest</a> on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>',
+      //                         'icon': 'bar'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.090372, 38.881189]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Ballston Arts & Crafts Market</strong><p>The <a href="http://ballstonarts-craftsmarket.blogspot.com/" target="_blank" title="Opens in a new window">Ballston Arts & Crafts Market</a> sets up shop next to the Ballston metro this Saturday for the first of five dates this summer. Nearly 35 artists and crafters will be on hand selling their wares. 10:00-4:00 p.m.</p>',
+      //                         'icon': 'art-gallery'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.111561, 38.882342]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Seersucker Bike Ride and Social</strong><p>Feeling dandy? Get fancy, grab your bike, and take part in this year\'s <a href="http://dandiesandquaintrelles.com/2012/04/the-seersucker-social-is-set-for-june-9th-save-the-date-and-start-planning-your-look/" target="_blank" title="Opens in a new window">Seersucker Social</a> bike ride from Dandies and Quaintrelles. After the ride enjoy a lawn party at Hillwood with jazz, cocktails, paper hat-making, and more. 11:00-7:00 p.m.</p>',
+      //                         'icon': 'bicycle'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.052477, 38.943951]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Capital Pride Parade</strong><p>The annual <a href="http://www.capitalpride.org/parade" target="_blank" title="Opens in a new window">Capital Pride Parade</a> makes its way through Dupont this Saturday. 4:30 p.m. Free.</p>',
+      //                         'icon': 'rocket'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.043444, 38.909664]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Muhsinah</strong><p>Jazz-influenced hip hop artist <a href="http://www.muhsinah.com" target="_blank" title="Opens in a new window">Muhsinah</a> plays the <a href="http://www.blackcatdc.com">Black Cat</a> (1811 14th Street NW) tonight with <a href="http://www.exitclov.com" target="_blank" title="Opens in a new window">Exit Clov</a> and <a href="http://godsilla.bandcamp.com" target="_blank" title="Opens in a new window">Gods’illa</a>. 9:00 p.m. $12.</p>',
+      //                         'icon': 'music'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.031706, 38.914581]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>A Little Night Music</strong><p>The Arlington Players\' production of Stephen Sondheim\'s  <a href="http://www.thearlingtonplayers.org/drupal-6.20/node/4661/show" target="_blank" title="Opens in a new window"><em>A Little Night Music</em></a> comes to the Kogod Cradle at The Mead Center for American Theater (1101 6th Street SW) this weekend and next. 8:00 p.m.</p>',
+      //                         'icon': 'music'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.020945, 38.878241]
+      //                     }
+      //                 },
+      //                 {
+      //                     'type': 'Feature',
+      //                     'properties': {
+      //                         'description':
+      //                             '<strong>Truckeroo</strong><p><a href="http://www.truckeroodc.com/www/" target="_blank">Truckeroo</a> brings dozens of food trucks, live music, and games to half and M Street SE (across from Navy Yard Metro Station) today from 11:00 a.m. to 11:00 p.m.</p>',
+      //                         'icon': 'music'
+      //                     },
+      //                     'geometry': {
+      //                         'type': 'Point',
+      //                         'coordinates': [-77.007481, 38.876516]
+      //                     }
+      //                 }
+      //             ]
+      //         }
+      //     });
+      //     // Add a layer showing the places.
+      //     map.addLayer({
+      //         'id': 'places',
+      //         'type': 'symbol',
+      //         'source': 'places',
+      //         'layout': {
+      //             'icon-image': ['get', 'icon'],
+      //             'icon-allow-overlap': true
+      //         }
+      //     });
+
+      //     // When a click event occurs on a feature in the places layer, open a popup at the
+      //     // location of the feature, with description HTML from its properties.
+      //     map.on('click', 'places', (e) => {
+      //         // Copy coordinates array.
+      //         const coordinates = e.features[0].geometry.coordinates.slice();
+      //         const description = e.features[0].properties.description;
+
+      //         // Ensure that if the map is zoomed out such that multiple
+      //         // copies of the feature are visible, the popup appears
+      //         // over the copy being pointed to.
+      //         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      //             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      //         }
+
+      //         new mapboxgl.Popup()
+      //             .setLngLat(coordinates)
+      //             .setHTML(description)
+      //             .addTo(map);
+      //     });
+
+      //     // Change the cursor to a pointer when the mouse is over the places layer.
+      //     map.on('mouseenter', 'places', () => {
+      //         map.getCanvas().style.cursor = 'pointer';
+      //     });
+
+      //     // Change it back to a pointer when it leaves.
+      //     map.on('mouseleave', 'places', () => {
+      //         map.getCanvas().style.cursor = '';
+      //     });
+      // });
+
+      // // semua uggp marker
+      // Batur
+      const marker1 = new mapboxgl.Marker({ color: "#FFD23F" }).setLngLat([115.3642046, -8.2838341]).addTo(map);
+
+      // Gn Sewu
+      const marker2 = new mapboxgl.Marker({ color: "#C68484" }).setLngLat([110.7830816, -8.0401107]).addTo(map);
+
+      // Rinjani
+      const marker3 = new mapboxgl.Marker({ color: "#416D19" }).setLngLat([116.3955333, -8.4254307]).addTo(map);
+
+      // Ciletuh
+      const marker4 = new mapboxgl.Marker({ color: "#5E1675" }).setLngLat([106.4618738, -7.1815911]).addTo(map);
+
+      // Toba
+      const marker5 = new mapboxgl.Marker({ color: "#E48F45" }).setLngLat([98.6392646, 2.5518754]).addTo(map);
+
+      // Belitong
+      const marker6 = new mapboxgl.Marker({ color: "#35374B" }).setLngLat([107.6267952, -2.7398615]).addTo(map);
+
+      // Ijen
+      const marker7 = new mapboxgl.Marker({ color: "#40679E" }).setLngLat([114.2389331, -8.0577049]).addTo(map);
+
+      // Maros Pangkep
+      const marker8 = new mapboxgl.Marker({ color: "#9B4444" }).setLngLat([119.6734143, -4.9762603]).addTo(map);
+
+      // merangin
+      const marker9 = new mapboxgl.Marker({ color: "#2D9596" }).setLngLat([102.1105206, -2.1784883]).addTo(map);
+
+      // Raja ampat
+      const marker10 = new mapboxgl.Marker({ color: "#8E7AB5" }).setLngLat([130.8077483, -0.4354084]).addTo(map);
+      // akhir semua uggp marker
+
+      // geocoder
+      
+
+      map.addControl(
+        new MapboxDirections({
+          accessToken: mapboxgl.accessToken,
+        }),
+        "top-right"
+      );
+      
+      //  navigation control (zoom, arah)
+      map.addControl(new mapboxgl.NavigationControl());
+
+      // Add a scale control to the map
+      map.addControl(new mapboxgl.ScaleControl(), "top-left");
+
+      // Add geolocate control to the map.
+      map.addControl(
+        new mapboxgl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true,
+          },
+          // When active the map will receive updates to the device's location as it changes.
+          trackUserLocation: true,
+          // Draw an arrow next to the location dot to indicate which direction the device is heading.
+          showUserHeading: true,
+        })
+      );
+
+    </script>
+  </body>
+</html>
